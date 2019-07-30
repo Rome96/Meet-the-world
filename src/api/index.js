@@ -1,11 +1,11 @@
 "use strict";
 const host = "https://restcountries.eu/rest/v2";
 
-const Countries = async () => {
-  const url = `${host}/all`;
+const Countries = async ( filters ) => {
+  const joined_filters = filters.join(';')
+  const url = `${host}/all?fields=${joined_filters}`;
   const response = await fetch(url);
   const data = await response.json();
-  console.log("veaa", data);
   return data;
 };
 

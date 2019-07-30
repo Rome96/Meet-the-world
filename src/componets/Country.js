@@ -1,13 +1,22 @@
 import React from "react";
+import "./styles/card.css";
 
 class Country extends React.Component {
   render() {
-      //const {countries} = this.props
+    const { countries } = this.props;
     return (
-      <div>
-        {this.props.countries}
-       
-      </div>
+        <div className="col-12 p-5 row">
+          {countries.map(country => (
+            <div className="card">
+              <img src={country.flag} class="" alt="flag" />
+              <div className="card-body">
+                <h3> {country.name}</h3>
+                <p>{country.capital}</p>
+                <p>{country.region}</p>
+              </div>
+            </div>
+          ))}
+        </div>
     );
   }
 }
