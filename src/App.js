@@ -15,8 +15,6 @@ class App extends React.Component {
       "languages",
       "region"
     ],
-    selected_filters: {},
-    pagina: ""
   };
 
   componentDidMount() {
